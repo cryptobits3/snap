@@ -262,7 +262,7 @@ done
   PEERS="${PEERS}"
   systemctl stop $SERVICE
   echo -e "\033[0;31m"Starting Statesync..."\033[0m"
-  sleep 2
+  sleep 90
   sudo -u $PR_USER cp $NODE_PATH/data/priv_validator_state.json $NODE_PATH/priv_validator_state.json.backup
   sudo -u $PR_USER $BIN $RESET --home $NODE_PATH
   sudo -u $PR_USER sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $NODE_PATH/config/config.toml 
